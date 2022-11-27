@@ -35,8 +35,8 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 54px;
-    width: 200px;
+    height: 3.3rem;
+    width: 12rem;
     font-size: 1.25rem;
     font-weight: 500;
     border-radius: 3rem; // just a high number to create pill effect
@@ -81,8 +81,8 @@ input[id="radio-3"] {
 .glider {
     position: absolute;
     display: flex;
-    height: 54px;
-    width: 200px;
+    height: 3.3rem;
+    width: 12rem;
     background-color: $secondary-color;
     z-index: 0;
     border-radius: 3rem; // just a high number to create pill effect

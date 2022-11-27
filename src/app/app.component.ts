@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ExpenseTracker';
+
+  tabChangeHandler = (event: string) => {
+    console.log(event);
+  }
 }
