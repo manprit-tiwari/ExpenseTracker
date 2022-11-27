@@ -1,0 +1,27 @@
+.add-button {
+    position: relative;
+
+    .menu-button {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1;
+    }
+
+    .sub-button {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 0;
+
+        &.add-icon {
+            bottom: 5rem;
+        }
+
+        &.profile-icon {
+            bottom: 9rem;
+        }
+    }
+
+
+}

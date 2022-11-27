@@ -1,0 +1,16 @@
+mat-form-field {
+    width: 100%;
+}
+
+.form-action {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+        width: 100%;
+    }
+
+}

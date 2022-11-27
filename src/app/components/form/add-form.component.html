@@ -1,0 +1,38 @@
+<div class="container">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type">
+                <mat-option value="expense">Expense</mat-option>
+                <mat-option value="income">Income</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input type="text" matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Amount</mat-label>
+            <input type="number" min="0" step="0.01" matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="date-field" appearance="outline">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="datepicker" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Method</mat-label>
+            <mat-select formControlName="method">
+                <ng-container *ngFor="let method of paymentMethod">
+                    <mat-option [value]="method">{{method}}</mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <div class="form-action">
+            <button type="reset" mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button type="submit" mat-raised-button color="primary">Save</button>
+        </div>
+    </form>
+</div>
