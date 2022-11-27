@@ -5,10 +5,12 @@ import { AppRoutingModule } from './modules/routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './modules/material/app-material.module';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
