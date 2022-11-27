@@ -8,12 +8,14 @@ import { AppMaterialModule } from './modules/material/app-material.module';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddFormComponent } from './components/form/add-form.component';
+import { ExpenseCardComponent } from './components/expense-card/expense-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabsComponent,
-    AddFormComponent
+    AddFormComponent,
+    ExpenseCardComponent
   ],
   imports: [
     BrowserModule,

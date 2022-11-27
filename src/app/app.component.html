@@ -1,5 +1,17 @@
 <app-tabs (tab)="tabChangeHandler($event)"></app-tabs>
 
+<div class="card-container">
+    <ng-container *ngIf="expenses.length > 0">
+        <ng-container *ngFor="let expense of expenses">
+            <app-expense-card [expense]="expense"></app-expense-card>
+        </ng-container>
+    </ng-container>
+    <ng-template #noExpenseData>
+        <h1>No Expense Data</h1>
+    </ng-template>
+</div>
+
+
 <div class="add-button">
     <button type="button" class="menu-button" (click)="moreMenuOpen = !moreMenuOpen" mat-fab
         [color]="moreMenuOpen? 'warn': 'primary'">

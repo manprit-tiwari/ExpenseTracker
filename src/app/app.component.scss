@@ -1,5 +1,5 @@
 .add-button {
-    position: relative;
+    // position: relative;
 
     .menu-button {
         position: fixed;
@@ -24,4 +24,19 @@
     }
 
 
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+
+    app-expense-card {
+        width: inherit;
+    }
 }
