@@ -9,13 +9,15 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddFormComponent } from './components/form/add-form.component';
 import { ExpenseCardComponent } from './components/expense-card/expense-card.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabsComponent,
     AddFormComponent,
-    ExpenseCardComponent
+    ExpenseCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
