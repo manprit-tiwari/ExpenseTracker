@@ -3,7 +3,8 @@
 <div class="card-container">
     <ng-container *ngIf="expenses.length > 0">
         <ng-container *ngFor="let expense of expenses">
-            <app-expense-card [expense]="expense"></app-expense-card>
+            <app-expense-card [expense]="expense"
+                (click)="showExpenseDetail = !showExpenseDetail; showExpenseDetailOfId = expense.id"></app-expense-card>
         </ng-container>
     </ng-container>
     <ng-template #noExpenseData>
@@ -25,3 +26,10 @@
         <mat-icon>person</mat-icon>
     </button>
 </div>
+
+
+<ng-container *ngIf="showExpenseDetail">
+    <div class="expense-detail-container">
+        <app-expense-detail [Id]="showExpenseDetailOfId" (close)="closeExpenseDetail()"></app-expense-detail>
+    </div>
+</ng-container>

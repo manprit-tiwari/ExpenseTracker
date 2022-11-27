@@ -23,7 +23,8 @@ export class AddFormComponent {
         'title': new FormControl('', Validators.required),
         'amount': new FormControl('', Validators.required),
         'date': new FormControl(new Date(), Validators.required),
-        'method': new FormControl('UPI', Validators.required)
+        'method': new FormControl('UPI', Validators.required),
+        'extraComment': new FormControl('')
     })
 
     onSubmit = () => {

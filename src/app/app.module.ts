@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddFormComponent } from './components/form/add-form.component';
 import { ExpenseCardComponent } from './components/expense-card/expense-card.component';
 import { HomeComponent } from './components/home/home.component';
+import { ExpenseDetailComponent } from './components/expense-detail/expense-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './components/home/home.component';
     TabsComponent,
     AddFormComponent,
     ExpenseCardComponent,
-    HomeComponent
+    HomeComponent,
+    ExpenseDetailComponent
   ],
   imports: [
     BrowserModule,

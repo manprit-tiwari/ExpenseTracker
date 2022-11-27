@@ -10,7 +10,8 @@ import { ExpenseService } from '../../services/expense.service';
 })
 export class HomeComponent implements OnInit {
     expenses!: any[];
-
+    showExpenseDetail: boolean = false;
+    showExpenseDetailOfId!: string;
     moreMenuOpen: boolean = false;
 
     constructor(
@@ -52,5 +53,9 @@ export class HomeComponent implements OnInit {
     private getAllExpenseData = () => {
         this.expenses = [...this.expenseService.Expenses].reverse();
         console.log(this.expenses);
+    }
+
+    closeExpenseDetail = () => {
+        this.showExpenseDetail = false;
     }
 }

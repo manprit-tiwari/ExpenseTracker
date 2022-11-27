@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="close-button">
+        <div class="type">
+            {{type}}
+        </div>
+        <button type="button" mat-icon-button (click)="closeDrawer()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="main-content">
+        <div class="title">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="details">
+            <h4>Date: </h4>{{date.toLocaleDateString()}}
+        </div>
+        <div class="details">
+            <h4>Amount: </h4>{{amount}}
+        </div>
+        <div class="details">
+            <h4>Method: </h4>{{method}}
+        </div>
+        <ng-container *ngIf="extraComment">
+            <div class="details">
+                <h4>Extra Comment: </h4>{{extraComment}}
+            </div>
+        </ng-container>
+    </div>
+</div>
