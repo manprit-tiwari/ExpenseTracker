@@ -1,0 +1,20 @@
+<div class="container">
+    <p class="title">Log In</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput formControlName="userName" autocomplete="off">
+            <mat-error>Email is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>passowrd</mat-label>
+            <input [type]="showPassword ? 'text': 'password'" matInput formControlName="password" autocomplete="off">
+            <mat-icon matSuffix (click)="showPassword = !showPassword">{{showPassword ? 'visibility': 'visibility_off'}}</mat-icon>
+            <mat-error>Password is required</mat-error>
+        </mat-form-field>
+        <div class="form-action">
+            <button mat-raised-button [color]="loginForm.invalid ? 'warn': 'primary'">Log In</button>
+            <p>New User? <span routerLink="/auth/signUp">Sign Up!</span></p>
+        </div>
+    </form>
+</div>

@@ -12,7 +12,7 @@
             <h1>{{title}}</h1>
         </div>
         <div class="details">
-            <h4>Date: </h4>{{date.toLocaleDateString()}}
+            <h4>Date: </h4>{{date}}
         </div>
         <div class="details">
             <h4>Amount: </h4>{{amount}}
@@ -25,5 +25,12 @@
                 <h4>Extra Comment: </h4>{{extraComment}}
             </div>
         </ng-container>
+        <div class="delete_button">
+            <button type="button" mat-flat-button color="warn" (click)="deleteExpense()">
+                <mat-icon>delete_forever</mat-icon>
+                Remove Expense
+            </button>
+        </div>
+
     </div>
 </div>

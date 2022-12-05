@@ -62,5 +62,21 @@
         background-color: #2a2a2a;
         border: 1px solid #ececec;
         border-radius: 0.5rem;
+        font-weight: 700;
+        // $backgroundColor: rgb(224, 224, 224);
+
+
+        &.red{
+            // color: red;
+            // background-color: $backgroundColor;
+            background-color: red;
+            
+        }
+
+        &.green{
+            // color: green;
+            // background-color: $backgroundColor;
+            background-color: green;
+        }
     }
 }

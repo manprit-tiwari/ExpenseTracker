@@ -1,4 +1,7 @@
-<!-- <div class="container">
+<div class="container">
+    <p class="title">
+        Add Expense
+    </p>
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="outline">
             <mat-label>Type</mat-label>
@@ -9,15 +12,15 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Title</mat-label>
-            <input type="text" matInput formControlName="title">
+            <input type="text" matInput formControlName="title" autocomplete="off">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Amount</mat-label>
-            <input type="number" min="0" step="0.01" matInput formControlName="amount">
+            <input type="number" min="0" step="0.01" matInput formControlName="amount" autocomplete="off">
         </mat-form-field>
         <mat-form-field class="date-field" appearance="outline">
             <mat-label>Date</mat-label>
-            <input matInput [matDatepicker]="datepicker" formControlName="date">
+            <input matInput [matDatepicker]="datepicker" formControlName="date" autocomplete="off">
             <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
             <mat-datepicker #datepicker></mat-datepicker>
             <mat-hint>MM/DD/YYYY</mat-hint>
@@ -32,16 +35,16 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Extra Comment</mat-label>
-            <textarea matInput formControlName="extraComment"></textarea>
+            <textarea matInput formControlName="extraComment" autocomplete="off"></textarea>
         </mat-form-field>
         <div class="form-action">
-            <button type="reset" mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button type="reset" mat-raised-button color="warn" routerLink="/home">Cancel</button>
             <button type="submit" mat-raised-button color="primary">Save</button>
         </div>
     </form>
-</div> -->
+</div>
 
-<mat-dialog-content>
+<!-- <mat-dialog-content>
     <div class="container">
         <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="outline">
@@ -84,8 +87,4 @@
 <mat-dialog-actions>
     <button type="reset" mat-raised-button color="warn" mat-dialog-close>Cancel</button>
     <button type="submit" mat-raised-button color="primary" (click)="onSubmit()">Save</button>
-</mat-dialog-actions>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores debitis dolor consectetur maxime sint sunt libero
-distinctio voluptatem, et, harum molestias! Molestiae, molestias. Omnis veniam repellat excepturi nihil harum veritatis
-debitis, nam laudantium quod ipsa molestias nemo nobis voluptatibus libero officiis quia, magnam minus! Enim dolore
-autem dolorum eaque exercitationem.
+</mat-dialog-actions> -->

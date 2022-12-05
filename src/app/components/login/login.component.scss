@@ -1,0 +1,55 @@
+:host{
+    width: 100%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: height 3s ease;
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+
+        mat-form-field {
+            width: inherit;
+        }
+
+        .form-action {
+            width: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            button {
+                padding: 0.2rem 0.5rem;
+                width: 7rem;
+            }
+
+            p{
+                font-size: 1.1rem;
+                font-weight: 500;
+
+                span{
+                    color: blue;
+                    text-decoration: underline;
+
+                    &:active{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

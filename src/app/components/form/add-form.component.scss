@@ -1,3 +1,45 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+    width: 100%;
+
+    .title{
+        font-size: 2rem;
+        width: inherit;
+        align-items: flex-start;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+
+        mat-form-field{
+            width: inherit;
+        }
+
+        .form-action{
+            display: flex;
+            width: inherit;
+            justify-content: space-around;
+            align-items: center;
+            
+            button{
+                padding: 0.3rem 0.7rem;
+                width: 7rem;
+            }
+        }
+    }
+
+}
+
+
+
 mat-form-field {
     width: 100%;
 }

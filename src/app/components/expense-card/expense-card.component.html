@@ -13,7 +13,7 @@
     <div class="title">
         {{expense.title}}
     </div>
-    <div class="amount">
+    <div class="amount" [ngClass]="expense.type === 'income' ? 'green':'red'">
         {{amount}}
     </div>
 </div>

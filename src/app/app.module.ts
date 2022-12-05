@@ -11,6 +11,14 @@ import { AddFormComponent } from './components/form/add-form.component';
 import { ExpenseCardComponent } from './components/expense-card/expense-card.component';
 import { HomeComponent } from './components/home/home.component';
 import { ExpenseDetailComponent } from './components/expense-detail/expense-detail.component';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { AuthComponent } from './components/auth/auth.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +27,24 @@ import { ExpenseDetailComponent } from './components/expense-detail/expense-deta
     AddFormComponent,
     ExpenseCardComponent,
     HomeComponent,
-    ExpenseDetailComponent
+    ExpenseDetailComponent,
+    AuthComponent,
+    LoginComponent,
+    SignupComponent,
+    ProfileComponent,
+    LayoutComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HotToastModule.forRoot({
+      autoClose: true
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

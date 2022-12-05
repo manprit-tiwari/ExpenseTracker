@@ -1,0 +1,90 @@
+$avatar-size: 10rem;
+
+.container{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+    background-color: #faebd766;
+    min-height: 100vh;
+    gap: 3rem;
+
+    .title{
+        font-size: 2rem;
+        font-size: 600;
+
+        mat-icon{
+            opacity: 0.5;
+
+            &:active{
+                opacity: 1;
+            }
+        }
+    }
+
+    .avatar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        background-color: #fff;
+        width: $avatar-size;
+        height: $avatar-size;
+        padding: 1rem;
+        border-radius: 100%;
+
+        img{
+            width: calc($avatar-size - 2rem);
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+
+        mat-form-field{
+            width: 100%;
+        }
+
+        .password_button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-block-end: 1rem;
+
+            button{
+                padding: 0.3rem 0.7rem;
+                width: 10rem;
+            }
+        }
+
+        .form-action{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            button{
+                width: 7rem;
+                padding: 0.3rem 0.7rem;
+            }
+        }
+
+        .logout_button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button{
+                width: 10rem;
+                padding: 0.3rem 0.7rem;
+            }
+        }
+    }
+
+}

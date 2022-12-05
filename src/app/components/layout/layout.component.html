@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+
+
+<div class="add-button">
+    <button type="button" class="menu-button" (click)="moreMenuOpen = !moreMenuOpen" mat-fab
+        [color]="moreMenuOpen? 'warn': 'primary'">
+        <mat-icon>{{moreMenuOpen ? 'close': 'more_vert'}}</mat-icon>
+    </button>
+    <button type="button"routerLink="/add_form" (click)="moreMenuOpen = !moreMenuOpen" class="sub-button" [ngClass]="moreMenuOpen ? 'add-icon': 'visibility_hidden'" mat-fab color="primary">
+        <mat-icon>add</mat-icon>
+    </button>
+    <button type="button" routerLink="/profile" (click)="moreMenuOpen = !moreMenuOpen" class="sub-button" [ngClass]="moreMenuOpen ? 'profile-icon': 'visibility_hidden'" mat-fab
+        color="primary">
+        <mat-icon>person</mat-icon>
+    </button>
+    <button type="button" routerLink="/home" (click)="moreMenuOpen = !moreMenuOpen" class="sub-button" [ngClass]="moreMenuOpen ? 'home-icon': 'visibility_hidden'" mat-fab
+        color="primary">
+        <mat-icon>home</mat-icon>
+    </button>
+    <ng-container *ngIf="displayNone">
+        <button type="button" (click)="openFilter()" class="sub-button" [ngClass]="moreMenuOpen ? 'filter-icon': 'visibility_hidden'" mat-fab
+            color="primary">
+            <mat-icon>filter_alt</mat-icon>
+        </button>
+    </ng-container>
+    
+</div>

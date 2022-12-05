@@ -1,0 +1,32 @@
+<mat-dialog-content>
+    <form [formGroup]="filterForm" #filterFormRef (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Year</mat-label>
+            <mat-select formControlName="year">
+                <ng-container *ngFor="let year of years">
+                    <mat-option [value]="year">{{year}}</mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Month</mat-label>
+            <mat-select formControlName="month">
+                <ng-container *ngFor="let month of months">
+                    <mat-option [value]="month">{{month}}</mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <mat-select formControlName="date">
+                <ng-container *ngFor="let date of dates">
+                    <mat-option [value]="date">{{date}}</mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <div class="form-action">
+            <button type="submit" mat-raised-button color="primary"><mat-icon>filter_alt</mat-icon> Filter</button>
+            <button type="button" mat-raised-button color="warn" (click)="clearFilter()"> Remove Filter</button>
+        </div>
+    </form>
+</mat-dialog-content>

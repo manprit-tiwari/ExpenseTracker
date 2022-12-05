@@ -1,0 +1,36 @@
+<div class="container">
+    <p class="title">Sign Up</p>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="name" autocomplete="off">
+            <mat-error>Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput formControlName="userName" autocomplete="off">
+            <mat-error>Email is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input [type]="showPassword ? 'text': 'password'" matInput formControlName="password" autocomplete="off">
+            <mat-icon matSuffix (click)="showPassword = !showPassword">{{showPassword? 'visibility': 'visibility_off'}}</mat-icon>
+            <mat-error>Password is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input [type]="showConfirmPassword ? 'text': 'password'" matInput formControlName="confirmPassword" autocomplete="off">
+            <mat-icon matSuffix (click)="showConfirmPassword = !showConfirmPassword">{{showConfirmPassword ? 'visibility': 'visibility_off'}}</mat-icon>
+            <mat-error>Confirm password is required</mat-error>
+        </mat-form-field>
+        <div class="common_error">
+            <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+                Password and confirm passsword dosen't match
+            </mat-error>
+        </div>
+        <div class="form-action">
+            <button type="submit" mat-raised-button [color]="signUpForm.invalid ? 'warn': 'primary'">Sign Up</button>
+            <p>Existing User? <span routerLink="/auth/login">Log In!</span></p>
+        </div>
+    </form>
+</div>

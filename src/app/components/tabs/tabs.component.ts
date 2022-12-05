@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
@@ -6,9 +6,10 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
     templateUrl: './tabs.component.html',
     styleUrls: ['./tabs.component.scss']
 })
-export class TabsComponent implements OnInit {
+export class TabsComponent implements OnInit, OnChanges {
 
     @Output() tab: EventEmitter<string> = new EventEmitter();
+    @Input() swipeData!: string;
 
 
     filterForm = new FormGroup({
@@ -18,6 +19,12 @@ export class TabsComponent implements OnInit {
     ngOnInit(): void {
         this.tab.emit('all');
         this.watchFormTabChanges();
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.filterForm.patchValue({
+            filter: this.swipeData
+        });
     }
 
     get filter() {

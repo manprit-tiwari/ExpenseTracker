@@ -1,0 +1,46 @@
+<div class="container">
+    <p class="title">
+        Profile
+        <button type="button" mat-icon-button (click)="enableEditMode()">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </p>
+    <div class="avatar">
+        <img src="assets/images/default-profile.svg" alt="">
+    </div>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input type="text" matInput formControlName="userName">
+        </mat-form-field>
+        <ng-container *ngIf="editMode">
+            <ng-container *ngIf="profileForm.get('password'); else updatePasswordButton">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input [type]="showPassword ? 'text': 'password'" matInput formControlName="password">
+                    <mat-icon matSuffix (click)="showPassword = !showPassword">{{showPassword ? 'visibility': 'visibility_off'}}</mat-icon>
+                </mat-form-field>
+            </ng-container>
+            <ng-template #updatePasswordButton>
+                <div class="password_button">
+                    <button type="button" mat-raised-button color="primary" (click)="addPasswordField()">Update password</button>
+                </div>
+            </ng-template>
+        </ng-container>
+        <ng-container *ngIf="editMode; else logout">
+            <div class="form-action">
+                <button type="reset" mat-raised-button color="warn" (click)="enableEditMode()">Cancel</button>
+                <button type="submit" mat-raised-button color="primary">Save</button>
+            </div>
+        </ng-container>
+        <ng-template #logout>
+            <div class="logout_button">
+                <button type="button" color="warn" mat-raised-button (click)="logOut()"> <mat-icon>logout</mat-icon> Log Out</button>
+            </div>
+        </ng-template>
+    </form>
+</div>

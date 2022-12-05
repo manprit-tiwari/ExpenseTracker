@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { ExpenseService } from "src/app/services/expense.service";
+import { ExpenseService } from "src/app/services/expense/expense.service";
 
 @Component({
     selector: 'app-expense-card',
@@ -21,7 +21,7 @@ export class ExpenseCardComponent implements OnInit {
         this.month = this.date.toLocaleString('en-IN', { month: 'long' });
         this.year = this.date.getFullYear();
         this.day = this.date.toLocaleString('en-IN', { day: '2-digit' });
-        this.amount = new Intl.NumberFormat('en-IN', { currency: 'INR' }).format(this.expense.amount);
+        this.amount = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(this.expense.amount);
     }
     // date: Date = new Date(this.expense.date) || new Date();
     // month: string = this.date.toLocaleString('en-IN', { month: 'long' });

@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
-import { ExpenseService } from "src/app/services/expense.service";
+import { Router } from "@angular/router";
+import { ExpenseService } from "src/app/services/expense/expense.service";
 
 
 @Component({
@@ -12,7 +13,7 @@ import { ExpenseService } from "src/app/services/expense.service";
 export class AddFormComponent {
 
     constructor(
-        private dialogRef: MatDialogRef<AddFormComponent>,
+        private router: Router,
         private expenseService: ExpenseService
     ) { }
 
@@ -34,10 +35,13 @@ export class AddFormComponent {
             return;
         }
         else {
-            let expenseData = { ...this.addForm.value, id: Math.random().toString() }
-            this.expenseService.Expenses.push(expenseData);
-            debugger;
-            this.dialogRef.close();
+            let expenseData = { ...this.addForm.value}
+            this.expenseService.addExpense(expenseData).subscribe({
+                next: (result: any) => {
+                    this.expenseService.Expenses.push(result);
+                    this.router.navigate(['/home'])
+                }
+            })
         }
     }
 }
